@@ -1,0 +1,22 @@
+<?php
+
+$mysqlhost=".:3307"; // MySQL-Host angeben
+$mysqluser="root"; // MySQL-User angeben
+$mysqlpwd=""; // Passwort angeben
+$mysqldb="DB424098"; // Gewuenschte Datenbank angeben
+
+$connection=mysql_connect($mysqlhost, $mysqluser, $mysqlpwd) or die("Verbindungsversuch fehlgeschlagen");
+
+mysql_select_db($mysqldb, $connection) or die("Konnte die Datenbank nicht waehlen.");
+
+function updateDB($postArray) {
+	if(isset($postArray['save'])) {
+		if($postArray['save'] == "Speichern") {
+			$query = "UPDATE freischaltung SET macadr = '".$postArray['macadr']."', customer = '".$postArray['customer']."', status = '".$postArray['status']."' WHERE seriennr = '".$postArray['sernr']."'";
+			mysql_query($query);
+			echo "<p>done update with $query</p>";
+		}
+	}
+}
+
+?>
