@@ -2,5 +2,5 @@
 
 ## involved
 
-Christian Thies
-Karsten Klingelhöfer
+- Christian Thies
+- Karsten Klingelhöfer
